@@ -1,0 +1,132 @@
+@use "../abstracts/" as a;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: a.$clr-white;
+  border-radius: 10px;
+  max-width: 300px;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.card__head {
+  img {
+    width: 100%;
+  }
+}
+
+@include a.breakpoint(large) {
+  .card {
+    flex-direction: row;
+    max-width: 600px;
+  }
+
+  .card__head img {
+    height: 100%;
+  }
+}
+
+.card__body {
+  text-align: left;
+  padding: 20px;
+
+  @include a.breakpoint(large) {
+    max-width: 300px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+.product__type {
+  padding-bottom: 10px;
+}
+
+.product__name,
+.product__description,
+.product__pricing {
+  padding-block: 10px;
+}
+
+.product__pricing {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.product__type,
+.product__description,
+.old-price,
+.button {
+  font-size: 14px;
+}
+
+.product__name,
+.current-price {
+  font-size: 27px;
+}
+
+.product__name,
+.current-price {
+  font-family: "Fraunces", serif;
+}
+
+.product__type,
+.product__description,
+.old-price,
+.button {
+  font-family: "Montserrat", sans-serif;
+}
+
+.current-price {
+  color: a.$clr-dark-cyan;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  background-color: a.$clr-dark-cyan;
+  color: a.$clr-white;
+  width: 100%;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  padding-block: 14px;
+
+  &:hover {
+    background-color: a.$clr-darkblue;
+  }
+}
+
+.product__type,
+.product__description,
+.old-price {
+  color: a.$clr-grayish-blue;
+}
+
+.product__type {
+  letter-spacing: 2px;
+}
+
+.product__name {
+  color: a.$clr-darkblue;
+  line-height: 1;
+
+  @include a.breakpoint(large) {
+    line-height: 1.2;
+  }
+}
+
+.product__description {
+  line-height: 1.4;
+  letter-spacing: 1;
+
+  @include a.breakpoint(large) {
+    line-height: 1.6;
+  }
+}
